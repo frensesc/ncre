@@ -71,15 +71,38 @@ input, textarea {
             </div>
           </div>
           <div class="widow-content">
-            <iframe
-              width="479"
-              height="415"
-              src="https://www.youtube.com/embed/XGUS7VnLvZU?autoplay=1"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+    <iframe
+        id="nightcorePlayer"
+        width="479"
+        height="415"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+    ></iframe>
+</div>
+
+<script>
+    // Array of Nightcore music video URLs
+    var nightcoreVideos = [
+        'https://www.youtube.com/embed/XGUS7VnLvZU?autoplay=1',
+        'https://www.youtube.com/embed/KjtdnQR1V4I-A?autoplay=1',
+        'https://www.youtube.com/embed/Bo4A4yA4HgM?autoplay=1',
+        'https://www.youtube.com/embed/8N_aay0ddcY?autoplay=1',
+	'https://www.youtube.com/embed/Quzsv6ekcPQ?autoplay=1',
+	'https://www.youtube.com/embed/z1a2w2dV3H4?autoplay=1',
+        // Add more video URLs as needed
+    ];
+
+    // Function to get a random video URL
+    function getRandomVideo() {
+        var randomIndex = Math.floor(Math.random() * nightcoreVideos.length);
+        return nightcoreVideos[randomIndex];
+    }
+
+    // Set the src attribute of the iframe with a random Nightcore video
+    document.getElementById('nightcorePlayer').src = getRandomVideo();
+</script>
+
         </div>
       </div>
     </div>
